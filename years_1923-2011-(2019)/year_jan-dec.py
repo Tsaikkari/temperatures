@@ -8,41 +8,40 @@ def get_temperatures(files):
     combined_annual_avg_temperatures = [] # list of year/average temperature objects combined of multiple files
     station_data = {} # 'uncleaned' station object that includes montly average temperature list where years are the keys
     temp_dict = {} # one (the first station) 'cleaned' object that includes annual average temperatures for the station
-    annual_avg_temperature_list = [] # a list of {'year': XXXX, 'temperature': xx.xx} objects of stations
+    annual_avg_temperature_list = [] # a list of {'year': XXXX, 'temperature': xx.xx} objects of station data
 
     for filename in files:
         with open(filename) as new_file:
             for line in new_file:
                 line = line.replace(' ', ',')
                 line = line.strip()
-                records = line.split(',')
-                if records[0] == 'YEAR':
+                row = line.split(',')
+                if row[0] == 'YEAR':
                     continue
-                year = records[0]
+                year = row[0]
                 if year == '':
                     continue
                 station_data[year] = []
-                for item in records[1:]:
-                    if item != '':
-                        station_data[year].append(float(item)) 
+                for temperature in row[1:]:
+                    if temperature != '':
+                        station_data[year].append(float(temperature)) 
         
-        add_average_temp(station_data, annual_avg_temperature_list, temp_dict)
+        calc_average_monthly_temp(station_data, annual_avg_temperature_list, temp_dict)
 
     if number_of_files > 1: 
-        for year, temp in temp_dict.items():
-            temp = float(temp)
+        for year, _ in temp_dict.items():
             summe = 0
-            for record in annual_avg_temperature_list:
-                if year == record['year']:
-                    summe += float(record['temperature'])
-            average = summe / number_of_files
-            combined_annual_avg_temperatures.append({'year': year, 'temperature': round(average, 2)})
+            for row in annual_avg_temperature_list:
+                if year == row['year']:
+                    summe += float(row['temperature'])
+            combined_annual_avg_temperatures.append({'year': year, 'temperature': round(summe / number_of_files, 2)})
         return [combined_annual_avg_temperatures, number_of_files]
     return annual_avg_temperature_list
 
-def add_average_temp(station_data: object, annual_avg_temperature_list: list, temp_dict: object):
+def calc_average_monthly_temp(station_data: object, annual_avg_temperature_list: list, temp_dict: object):
     for year, temperatures in station_data.items():
         temperatures = temperatures[:-5]
+        # TODO: maybe change this
         if 999.9 in temperatures:
             continue
         if len(temperatures) > 0:

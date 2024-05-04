@@ -14,16 +14,15 @@ def get_temperatures_with_modified_avg_data(files):
             for line in new_file:
                 line = line.replace(' ', ',')
                 line = line.strip()
-                records = line.split(',')
-                if records[0] == 'YEAR':
+                row = line.split(',')
+                if row[0] == 'YEAR':
                     continue
-                if records[-1] != '':
-                    year_metANN.append({'year': int(records[0]), 'temperature': float(records[-1])})
-                    temp_dict[int(records[0])] = records[-1]
+                if row[-1] != '':
+                    year_metANN.append({'year': int(row[0]), 'temperature': float(row[-1])})
+                    temp_dict[int(row[0])] = row[-1]
     
     if number_of_files > 1: 
-        for key, value in temp_dict.items():
-            value = float(value)
+        for key, _ in temp_dict.items():
             summe = 0
             for record in year_metANN:
                 if key == record['year']:
