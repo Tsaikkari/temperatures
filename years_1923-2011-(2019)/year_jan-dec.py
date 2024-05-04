@@ -35,7 +35,7 @@ def get_temperatures(files):
             for record in annual_avg_temperature_list:
                 if year == record['year']:
                     summe += float(record['temperature'])
-            average = summe / 3
+            average = summe / number_of_files
             combined_annual_avg_temperatures.append({'year': year, 'temperature': round(average, 2)})
         return [combined_annual_avg_temperatures, number_of_files]
     return annual_avg_temperature_list

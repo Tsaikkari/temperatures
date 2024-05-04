@@ -1,7 +1,7 @@
 Bjornoya: 1949-2011
 https://data.giss.nasa.gov/tmp/gistemp/STATIONS_v2/tmp_634010280000_0_0/station.txt
 https://data.giss.nasa.gov/tmp/gistemp/STATIONS_v2/tmp_634010280003_0_0/station.txt
-https://data.giss.nasa.gov/cgi-bin/gistemp/stdata_show_v2.cgi?id=634010280000&dt=1&ds=12
+https://data.giss.nasa.gov/tmp/gistemp/STATIONS_v2/tmp_634010280000_12_0/station.txt
 
 Bodo Vi: 1880-2011
 https://data.giss.nasa.gov/tmp/gistemp/STATIONS_v2/tmp_634011520000_0_0/station.txt
@@ -9,7 +9,7 @@ https://data.giss.nasa.gov/tmp/gistemp/STATIONS_v2/tmp_634011520003_0_0/station.
 https://data.giss.nasa.gov/tmp/gistemp/STATIONS_v2/tmp_634011520000_12_0/station.txt
 
 Danmarkshavn: 1951-2011
-https://data.giss.nasa.gov/cgi-bin/gistemp/stdata_show_v2.cgi?id=431043200000&dt=1&ds=0
+https://data.giss.nasa.gov/tmp/gistemp/STATIONS_v2/tmp_431043200000_0_0/station.txt
 https://data.giss.nasa.gov/tmp/gistemp/STATIONS_v2/tmp_431043200003_0_0/station.txt
 https://data.giss.nasa.gov/tmp/gistemp/STATIONS_v2/tmp_431043200000_12_0/station.txt
 
