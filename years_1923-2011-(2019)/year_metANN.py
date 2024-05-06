@@ -1,7 +1,7 @@
 import csv
 import json
 
-# _0 and _12 files data preparation and printing of annual metANN temperatures per month for multiple stations
+# ds=0 and ds=12 files data preparation and printing of annual metANN temperatures per month for multiple stations
 
 def get_temperatures_with_modified_avg_data(files):
     number_of_files = len(files)
