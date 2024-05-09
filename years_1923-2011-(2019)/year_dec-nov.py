@@ -34,7 +34,7 @@ def get_temperatures(files):
                     summe += float(row['temperature'])
             combined_annual_avg_temperatures.append({'year': year, 'temperature': round(summe / number_of_files, 2)})
         return [combined_annual_avg_temperatures, number_of_files]
-    return annual_avg_temperatures
+    return [annual_avg_temperatures, 1]
 
 def get_dec_nov_year_avg(station_data: object, data_mix: object, annual_average_temperatures: list):
     last_in_list = 0
@@ -68,12 +68,12 @@ def print_to_csv(data: list):
 
     for row in data[0]:
         array.append([row['year'], row['temperature']])
-    with open(f"outfile_12_dec-nov({data[1]}).csv", 'w') as out_file:
+    with open(f"outfile_0_dec-nov({data[1]}).csv", 'w') as out_file:
         writer = csv.writer(out_file)
         writer.writerows(array)
 
 def print_to_json(data: list):
-    with open(f"data_0_dec-nov.json", 'w') as f:
+    with open(f"data_0_dec-nov(1).json", 'w') as f:
        json.dump(data, f, ensure_ascii=False, indent=4)
         
 # results_12 = get_temperatures([
@@ -88,12 +88,12 @@ def print_to_json(data: list):
 
 results = get_temperatures([
     'Vardo_0.txt', 
-    'Sodankyla_0.txt', 
-    'Malye_Karmaku_0.txt', 
-    'Bodo_Vi_0.txt', 
-    'Jan_Mayen_0.txt', 
-    'Karajok_0.txt', 
-    'Tromo-Skatto_Norway_0.txt'
+    # 'Sodankyla_0.txt', 
+    # 'Malye_Karmaku_0.txt', 
+    # 'Bodo_Vi_0.txt', 
+    # 'Jan_Mayen_0.txt', 
+    # 'Karajok_0.txt', 
+    # 'Tromo-Skatto_Norway_0.txt'
 ])
 
 #print_to_csv(results_12)

@@ -34,7 +34,7 @@ def get_temperatures(files):
                     summe += float(row['temperature'])
             combined_annual_avg_temperatures.append({'year': year, 'temperature': round(summe / number_of_files, 2)})
         return [combined_annual_avg_temperatures, number_of_files]
-    return annual_avg_temperatures
+    return [annual_avg_temperatures, 1]
 
 def calc_average_monthly_temp(station_data: object, annual_avg_temperatures: list, temp_dict: object):
     for year, temperatures in station_data.items():
@@ -65,7 +65,7 @@ def print_to_json(data: list):
 #results_12 = get_temperatures(['Vardo_12.txt', 'Sodankyla_12.txt', 'Malye_Karmaku_12.txt'])
 results = get_temperatures(['Vardo_0.txt', 'Sodankyla_0.txt', 'Malye_Karmaku_0.txt'])
 #print_to_csv(results_12)
-print_to_csv(results)
+#print_to_csv(results)
 
 #print_to_json(results[0])
 #print_to_json(results_12[0])
