@@ -1,0 +1,36 @@
+body {
+  margin: 0px;
+  overflow: hidden;
+}
+
+text {
+  font-family: Poppins;
+}
+
+.tick text {
+  font-size: 1rem;
+  fill: #635f5d;
+}
+
+.tick line {
+  stroke: #c0c0bb;
+}
+
+.line-chart-container {
+  display: inline-block;
+}
+
+.legend-container {
+  display: flex;
+  justify-content: center;
+}
+
+.checkbox {
+  margin: 20px;
+  font-size: 1.6rem;
+}
+
+input[type="checkbox"] {
+  transform: scale(1.6);
+  margin: 15px;
+}

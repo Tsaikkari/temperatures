@@ -7,7 +7,7 @@ def get_temperatures(files):
     number_of_files = len(files)
     combined_annual_avg_temperatures = [] # list of year/average temperature objects combined of multiple files
     station_data = {} # 'uncleaned' station object that includes montly average temperature lists where years are the keys
-    data_mix = {} # object of monthly average temperatures per year where year is the key
+    data_mix = {} # object of monthly average temperatures per year (starting from December of previous year to November where year is the key
     annual_avg_temperatures = [] # a list of {'year': XXXX, 'temperature': xx.xx} objects of station data
 
     for filename in files:
@@ -60,7 +60,7 @@ def get_dec_nov_year_avg(station_data: object, data_mix: object, annual_average_
         for temperature_list in temperatures:
             average = round(sum(temperature_list) / len(temperature_list), 2)
         annual_average_temperatures.append({'year': year, 'temperature': average})
-    print(data_mix)
+
     return [annual_average_temperatures, data_mix]
 
 def print_to_csv(data: list):
@@ -73,16 +73,33 @@ def print_to_csv(data: list):
         writer.writerows(array)
 
 def print_to_json(data: list):
-    with open(f"data_12_dec-nov.json", 'w') as f:
+    with open(f"data_0_dec-nov.json", 'w') as f:
        json.dump(data, f, ensure_ascii=False, indent=4)
         
-results_12 = get_temperatures(['Vardo_12.txt', 'Sodankyla_12.txt', 'Malye_Karmaku_12.txt'])
-#results = get_temperatures(['Vardo_0.txt', 'Sodankyla_0.txt', 'Malye_Karmaku_0.txt'])
-#print(results)
+# results_12 = get_temperatures([
+#     'Vardo_12.txt', 
+#     'Sodankyla_12.txt', 
+#     'Malye_Karmaku_12.txt', 
+#     'Bodo_Vi_12.txt', 
+#     'Jan_Mayen_12.txt', 
+#     'Karajok_12.txt', 
+#     'Tromo-Skatto_Norway_12.txt'
+# ])
+
+results = get_temperatures([
+    'Vardo_0.txt', 
+    'Sodankyla_0.txt', 
+    'Malye_Karmaku_0.txt', 
+    'Bodo_Vi_0.txt', 
+    'Jan_Mayen_0.txt', 
+    'Karajok_0.txt', 
+    'Tromo-Skatto_Norway_0.txt'
+])
+
 #print_to_csv(results_12)
 #print_to_csv(results)
 
-#print_to_json(results[0])
+print_to_json(results[0])
 #print_to_json(results_12[0])
 
 

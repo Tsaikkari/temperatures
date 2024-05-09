@@ -1,6 +1,8 @@
 import { BrowserRouter as Router, Routes, Route, NavLink } from 'react-router-dom'
 
 import Home from './pages/Home'
+import LineChartPage from './pages/LineChartPage'
+
 import './App.css'
 
 function App() {
@@ -24,9 +26,12 @@ function App() {
         </NavLink>
       </nav>
       <Routes>
-        <Route path='/home' element={<Home />} />
+        <Route path='/' element={<Home />} />
+        <Route path='/temperatures' element={<LineChartPage />} />
       </Routes>
     </Router>
+
+
   )
 }
 
