@@ -153,7 +153,7 @@
     },
     {
         "year": 1962,
-        "temperature": 0.85
+        "temperature": 0.83
     },
     {
         "year": 1963,
@@ -189,11 +189,11 @@
     },
     {
         "year": 1971,
-        "temperature": 0.35
+        "temperature": 0.38
     },
     {
         "year": 1972,
-        "temperature": 2.32
+        "temperature": 2.33
     },
     {
         "year": 1973,
@@ -205,7 +205,7 @@
     },
     {
         "year": 1975,
-        "temperature": 2.01
+        "temperature": 2.03
     },
     {
         "year": 1976,
@@ -349,10 +349,38 @@
     },
     {
         "year": 2011,
-        "temperature": 2.69
+        "temperature": 2.85
     },
     {
-        "year": "",
-        "temperature": 0
+        "year": 2012,
+        "temperature": 2.77
+    },
+    {
+        "year": 2013,
+        "temperature": 3.31
+    },
+    {
+        "year": 2014,
+        "temperature": 2.93
+    },
+    {
+        "year": 2015,
+        "temperature": 3.23
+    },
+    {
+        "year": 2016,
+        "temperature": 3.73
+    },
+    {
+        "year": 2017,
+        "temperature": 2.71
+    },
+    {
+        "year": 2018,
+        "temperature": 3.0
+    },
+    {
+        "year": 2019,
+        "temperature": 0.48
     }
 ]
