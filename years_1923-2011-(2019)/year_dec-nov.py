@@ -73,7 +73,7 @@ def print_to_csv(data: list):
         writer.writerows(array)
 
 def print_to_json(data: list):
-    with open(f"data_0_dec-nov(1).json", 'w') as f:
+    with open(f"data_0_dec-nov.json", 'w') as f:
        json.dump(data, f, ensure_ascii=False, indent=4)
         
 # results_12 = get_temperatures([
@@ -88,18 +88,18 @@ def print_to_json(data: list):
 
 results = get_temperatures([
     'Vardo_0.txt', 
-    # 'Sodankyla_0.txt', 
-    # 'Malye_Karmaku_0.txt', 
-    # 'Bodo_Vi_0.txt', 
-    # 'Jan_Mayen_0.txt', 
-    # 'Karajok_0.txt', 
-    # 'Tromo-Skatto_Norway_0.txt'
+    'Sodankyla_0.txt', 
+    'Malye_Karmaku_0.txt', 
+    'Bodo_Vi_0.txt', 
+    'Jan_Mayen_0.txt', 
+    'Karajok_0.txt', 
+    'Tromo-Skatto_Norway_0.txt'
 ])
 
 #print_to_csv(results_12)
-#print_to_csv(results)
+print_to_csv(results)
 
-print_to_json(results[0])
+#print_to_json(results[0])
 #print_to_json(results_12[0])
 
 

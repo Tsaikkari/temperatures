@@ -7,14 +7,9 @@ text {
   font-family: Poppins;
 }
 
-.tick text {
-  font-size: 1rem;
-  fill: #635f5d;
-}
-
 .tick line {
   stroke: #c0c0bb;
-}
+} 
 
 .line-chart-container {
   display: inline-block;

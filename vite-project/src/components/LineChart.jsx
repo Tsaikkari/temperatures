@@ -10,12 +10,9 @@ export function LineChart({ data = [], dimensions = {} }) {
   const svgWidth = width + margin.left + margin.right;
   const svgHeight = height + margin.top + margin.bottom;
 
-  console.log("height", height);
-  console.log("margin", margin.bottom);
-
   useEffect(() => {
     if (data.length > 0) {
-      console.log("data", data);
+      console.log('data', data)
       const xScale = d3
         .scaleTime()
         .domain(d3.extent(data[0].items, (d) => d.year))
@@ -23,8 +20,8 @@ export function LineChart({ data = [], dimensions = {} }) {
       const yScale = d3
         .scaleLinear()
         .domain([
-          d3.min(data[0].items, (d) => d.temperature),
-          d3.max(data[0].items, (d) => d.temperature),
+          d3.min(data[0].items, (d) => d.temperature - 0.5),
+          d3.max(data[0].items, (d) => d.temperature + 0.5),
         ])
         .range([height, 0]);
       const svgEl = d3.select(svgRef.current);
@@ -46,8 +43,7 @@ export function LineChart({ data = [], dimensions = {} }) {
       xAxisGroup
         .selectAll("text")
         .attr("opacity", 0.5)
-        .attr("color", "white")
-        .attr("font-size", "0.75rem");
+        .attr("font-size", "1rem");
       const yAxis = d3
         .axisLeft(yScale)
         .ticks(10)
@@ -59,8 +55,7 @@ export function LineChart({ data = [], dimensions = {} }) {
       yAxisGroup
         .selectAll("text")
         .attr("opacity", 0.5)
-        .attr("color", "black")
-        .attr("font-size", "0.75rem");
+        .attr("font-size", "1rem");
       const line = d3
         .line()
         .x((d) => xScale(d.year))

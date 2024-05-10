@@ -34,7 +34,6 @@ export function LineChartPage() {
   const chartData = [
     ...[data_0, data_12].filter((d) => selectedItems.includes(d.name)),
   ];
-  console.log('chartdata', chartData)
   const onChangeSelection = (name) => {
     const newSelectedItems = selectedItems.includes(name)
       ? selectedItems.filter((item) => item !== name)
