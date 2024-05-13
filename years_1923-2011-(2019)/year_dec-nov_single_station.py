@@ -58,9 +58,9 @@ def print_to_json(data: list):
     with open(f"data_dec-nov_{data[1][:-4]}.json", 'w') as f:
        json.dump(data[0], f, ensure_ascii=False, indent=4)
         
-results = get_temperatures('Vardo_0.txt')
+results = get_temperatures('Jan_Mayen_0.txt')
 
-#print_to_csv(results)
+print_to_csv(results)
 #print_to_json(results)
 
 
